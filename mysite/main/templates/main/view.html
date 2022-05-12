@@ -1,0 +1,17 @@
+{% extends 'main/base.html' %}
+
+{% block title %}Logowanie i Rejestracja{% endblock %}
+
+
+{% block content %}
+	{% if user.is_authenticated %}
+		<ul class="list-group">
+		{% for l in lists %}
+			<li class="list-group-item"><a href="/{{l.id}}"><h3>{{l.name}}</h3></a></li>
+		{% endfor %}
+		</ul>
+	{% else %}
+		<h3>Zaloguj się <a href="/login">tutaj</a></h3>
+		<h3>Zarejestruj się <a href="/register">tutaj</a></h3>
+	{% endif %}
+{% endblock %}

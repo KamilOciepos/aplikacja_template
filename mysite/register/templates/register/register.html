@@ -1,0 +1,16 @@
+{% extends 'main/base.html' %}
+
+{% block titlte %}Rejestracja{% endblock %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+	<div class="content-section">
+		<form method="POST" class="form-group">
+			{% csrf_token %}
+			<legend class="border-bottom mb-3">Załóż konto</legend>
+			{{form|crispy}}
+			<button name="create", type="submit", class="btn btn-success">Zarejestruj</button>
+		</form>
+	</div>
+{% endblock %}
